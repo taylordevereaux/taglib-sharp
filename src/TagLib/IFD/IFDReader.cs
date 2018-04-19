@@ -518,7 +518,8 @@ namespace TagLib.IFD
 				}
 			}
 
-			if (type == (ushort) IFDEntryType.Float)
+			// Ignoring Float and Double values (type 11 and 12)
+			if (type == (ushort) IFDEntryType.Float || type ==  (ushort) IFDEntryType.Double)
 				return null;
 
 			if (type == 0 || type > 12) {
